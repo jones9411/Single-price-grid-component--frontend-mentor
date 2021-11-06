@@ -1,0 +1,146 @@
+@use "variables" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: $Family;
+}
+
+body {
+  background-color: $LightGray;
+}
+
+//============================================ container of grid component=========================================//
+.container {
+  min-height: fit-content;
+  height: 728px;
+  width: 85%;
+  margin: 25px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "join"
+    "sub"
+    "why";
+  border-radius: 8px;
+  box-shadow: 0px 15px 30px rgba(0, 81, 171, 0.148847);
+}
+
+//============================================== top content box===========================================//
+//
+.container-join {
+  height: 276px;
+  grid-area: join;
+  background-color: #fff;
+  padding: 1.875rem;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+
+  h1 {
+    font-weight: $WeightsBold;
+    font-size: 1.25rem;
+    color: $Cyan;
+    margin-bottom: 0.8125rem;
+  }
+
+  span {
+    font-size: 0.9375rem;
+    font-weight: $WeightsBold;
+    color: $BrightYellow;
+  }
+
+  p {
+    font-size: 0.875rem;
+    font-weight: $WeightsNormal;
+    color: $GrayishBlue;
+    line-height: 1.625rem;
+    margin-top: 0.8125rem;
+  }
+}
+
+//=============================== left on desktop - middle on mobile======================================//
+//
+.container-sub {
+  height: 226px;
+  grid-area: sub;
+  background-color: $Cyan;
+  padding: 1.875rem;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 1.125rem;
+    font-weight: $WeightsBold;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+
+  .price {
+    display: flex;
+    color: $GrayishBlue;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+
+    .dollar {
+      font-size: 2rem;
+      font-weight: $WeightsBold;
+      color: #fff;
+    }
+
+    p {
+      //   align-self: center;
+      color: #fff;
+      opacity: 0.5;
+      padding: 0.5rem;
+    }
+  }
+
+  p {
+    font-size: 0.9375rem;
+    font-weight: $WeightsNormal;
+    color: #fff;
+    margin-bottom: 1.2rem;
+  }
+
+  .bgt {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.0973011);
+    height: 3rem;
+    background-color: $BrightYellow;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: $WeightsBold;
+  }
+}
+
+//======================== right on desktop - bottom on mobile =============================//
+//
+.container-why {
+  height: 226px;
+  grid-area: why;
+  background-color: $lightCyan;
+  padding: 1.875rem;
+
+  h2 {
+    font-size: 1.125rem;
+    font-weight: $WeightsBold;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    li {
+      list-style: none;
+      font-size: 0.875rem;
+      font-weight: $WeightsNormal;
+      line-height: 1.25rem;
+      color: #fff;
+      opacity: 0.7;
+    }
+  }
+}
